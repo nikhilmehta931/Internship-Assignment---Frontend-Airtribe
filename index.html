@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kanban Board</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="board">
+  <div class="status-column todo">
+    <h2>To Do <span class="count">0</span></h2>
+    <div class="tasks" id="todo-tasks" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <!-- Task cards will be dynamically added here -->
+    </div>
+    <input type="text" id="new-task-input" placeholder="Enter new task">
+    <button class="add-task" onclick="addTask('todo')">Add Task</button>
+  </div>
+  <div class="status-column progress">
+    <h2>In Progress <span class="count">0</span></h2>
+    <div class="tasks" id="progress-tasks" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <!-- Task cards will be dynamically added here -->
+    </div>
+    <input type="text" id="new-task-input" placeholder="Enter new task">
+    <button class="add-task" onclick="addTask('progress')">Add Task</button>
+  </div>
+  <div class="status-column done">
+    <h2>Done <span class="count">0</span></h2>
+    <div class="tasks" id="done-tasks" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <!-- Task cards will be dynamically added here -->
+    </div>
+    <input type="text" id="new-task-input" placeholder="Enter new task" disabled>
+    <button class="add-task" onclick="addTask('done')" disabled>Add Task</button>
+  </div>
+</div>
+
+<script src="scripts.js"></script>
+
+</body>
+</html>
