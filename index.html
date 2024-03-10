@@ -3,39 +3,56 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kanban Board</title>
-<link rel="stylesheet" href="styles.css">
+<title>Notion Clone</title>
+<link rel"="stylesheet href="style.css">
 </head>
 <body>
-
-<div class="board">
-  <div class="status-column todo">
-    <h2>To Do <span class="count">0</span></h2>
-    <div class="tasks" id="todo-tasks" ondrop="drop(event)" ondragover="allowDrop(event)">
-      <!-- Task cards will be dynamically added here -->
-    </div>
-    <input type="text" id="new-task-input" placeholder="Enter new task">
-    <button class="add-task" onclick="addTask('todo')">Add Task</button>
-  </div>
-  <div class="status-column progress">
-    <h2>In Progress <span class="count">0</span></h2>
-    <div class="tasks" id="progress-tasks" ondrop="drop(event)" ondragover="allowDrop(event)">
-      <!-- Task cards will be dynamically added here -->
-    </div>
-    <input type="text" id="new-task-input" placeholder="Enter new task">
-    <button class="add-task" onclick="addTask('progress')">Add Task</button>
-  </div>
-  <div class="status-column done">
-    <h2>Done <span class="count">0</span></h2>
-    <div class="tasks" id="done-tasks" ondrop="drop(event)" ondragover="allowDrop(event)">
-      <!-- Task cards will be dynamically added here -->
-    </div>
-    <input type="text" id="new-task-input" placeholder="Enter new task" disabled>
-    <button class="add-task" onclick="addTask('done')" disabled>Add Task</button>
-  </div>
+<div class="navbar">
+<h1>Notion Clone</h1>
 </div>
-
-<script src="scripts.js"></script>
-
+<div id="app" class="container">
+<div id="status1" class="status">
+<h2>Status 1</h2>
+<button class="newButton">New</button>
+<div class="cardsContainer" ondrop="drop(event)" ondragover="allowDrop(event)">
+</div>
+<div class="cardCount"></div>
+</div>
+<div id="status2" class="status">
+<h2>Status 2</h2>
+<button class="newButton">New</button>
+<div class="cardsContainer" ondrop="drop(event)" ondragover="allowDrop(event)">
+</div>
+<div class="cardCount"></div>
+</div>
+<div id="status3" class="status">
+<h2>Status 3</h2>
+<button class="newButton">New</button>
+<div class="cardsContainer" ondrop="drop(event)" ondragover="allowDrop(event)">
+</div>
+<div class="cardCount"></div>
+</div>
+</div>
+<div id="taskDetailsModal" class="modal">
+<div class="modal-content">
+<span class="close">&times;</span>
+<h2>Task Details</h2>
+<form id="taskDetailsForm">
+<label for="title">Title:</label>
+<input type="text" id="title" name="title" required><br>
+<label for="status">Status:</label>
+<select id="status" name="status" required>
+<option value="status1">Status 1</option>
+<option value="status2">Status 2</option>
+<option value="status3">Status 3</option>
+</select><br>
+<label for="description">Description:</label><br>
+<textarea id="description" name="description" rows="4" cols="50"></textarea><br>
+<button type="submit">Save</button>
+<button type="button" id="deleteTask">Delete</button>
+</form>
+</div>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
